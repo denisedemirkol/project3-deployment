@@ -43,13 +43,8 @@ def homepage():
     )
 
 
-from .models import statepostcodes
+from .models import statepostcodes, statestats_v
 
-# @app.route("/api/healthcaretypes")
-# def healthcaretypes():
-#     healthcaretype = pd.read_sql("SELECT DISTINCT meta_healthcare FROM australia_healthsites", conn)
-#     print(type(healthcaretype))
-#     return healthcaretype.to_json()
 
 
 
@@ -103,14 +98,27 @@ from .models import statepostcodes
 #     return Response(df.to_json(orient="records"), mimetype='application/json')
 
 
-# @app.route("/api/v0/statestats")
-# def statestats():
+@app.route("/api/v0/statestats")
+def statestats():
+
+    l_list = []
+    l_dict = {}
 
     
-#     sqltext = "Select * From statestats_v"
-#     df = pd.read_sql(sqltext, conn)  
+    results = db.session.query(statestats_v.state, statestats_v.statecode, statestats_v.type, statestats_v.rowcount).all()
 
-#     return Response(df.to_json(orient="records"), mimetype='application/json')
+    for i in range(len(results)):
+             
+        l_dict = {
+                "state"     : results[i][0],
+                "statecode" : results[i][1],
+                "type"      : results[i][2],
+                "rowcount"  : results[i][3]
+            }
+
+        l_list.append(l_dict)
+
+    return jsonify(l_list)  
 
 @app.route("/api/v0/states")
 def states():
@@ -124,19 +132,14 @@ def states():
     for i in range(len(results)):
         
         
-        l_state        = results[i][0]   
-        l_abbreviation = results[i][1]
-        l_postcode_low = results[i][2]
-
         l_dict = {
                 "state": results[i][0],
                 "statecode": results[i][1],
-                "postcode": l_postcode_low
+                "postcode": results[i][2]
             }
 
         l_list.append(l_dict)
 
-    print(l_list)
     return jsonify(l_list)  
     
 
