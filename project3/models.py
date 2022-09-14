@@ -4,6 +4,7 @@ from .app import db
 class statepostcodes(db.Model):
     __tablename__ = 'statepostcodes'
 
+    recordid        = db.Column(db.Integer, primary_key=True)
     state           = db.Column(db.String(250))
     abbreviation    = db.Column(db.String(10))
     postcode_low    = db.Column(db.Integer)  
