@@ -117,7 +117,7 @@ from .models import statepostcodes
 
 @app.route("/api/v0/states")
 def states():
-    results = db.session.query(statepostcodes.name, statepostcodes.lat, statepostcodes.lon).all()
+    results = db.session.query(statepostcodes.state, statepostcodes.abbreviation, statepostcodes.postcode_low).all()
     print(results)
     return results
     
