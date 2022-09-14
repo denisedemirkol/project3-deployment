@@ -8,6 +8,7 @@ import pandas as pd
 
 from flask import Flask, jsonify
 from flask import Response
+from .models import statepostcodes
 
 #################################################
 # Flask Setup
@@ -43,6 +44,7 @@ def homepage():
         f"/api/v0/statestats<br/>"
 
     )
+
 
 
 # @app.route("/api/healthcaretypes")
@@ -112,6 +114,12 @@ def homepage():
 
 #     return Response(df.to_json(orient="records"), mimetype='application/json')
 
+@app.route("/api/v0/states")
+def states():
+    results = db.session.query(statepostcodes.name, statepostcodes.lat, statepostcodes.lon).all()
+    print(results)
+    return results
+    
 
 if __name__ == '__main__':
     app.run(debug=True)
