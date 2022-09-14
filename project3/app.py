@@ -136,8 +136,8 @@ def states():
 
         l_list.append(l_dict)
 
-    print(l_dict)
-    return jsonify(results)  
+    print(l_list)
+    return jsonify(l_list)  
     
 
 if __name__ == '__main__':
