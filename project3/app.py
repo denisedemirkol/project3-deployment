@@ -124,11 +124,12 @@ def states():
     for i in range(len(results)):
         
         l_list.append(results[i])
+        l_state        = results[i][1]   
+        l_abbreviation = results[i][2]
+        l_postcode_low = results[i][3]
 
-        #for x in range(len(results[i])):
-        #    print(results[i][x])
 
-    print(l_list)
+    print(l_state)
     return jsonify(results)  
     
 
