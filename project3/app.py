@@ -114,16 +114,21 @@ from .models import statepostcodes
 
 @app.route("/api/v0/states")
 def states():
+
+    l_list = []
+    l_dict = {}
+
     results = db.session.query(statepostcodes.state, statepostcodes.abbreviation, statepostcodes.postcode_low).all()
    
     
     for i in range(len(results)):
-        print(results[i])
+        
+        l_list.append(results[i])
 
-        for x in range(len(results[i])):
-            print(results[i][x])
+        #for x in range(len(results[i])):
+        #    print(results[i][x])
 
-
+    print(l_list)
     return jsonify(results)  
     
 
