@@ -27,3 +27,31 @@ class statestats_v(db.Model):
 
     def __repr__(self):
         return '<statestats_v %r>' % (self.name)
+
+
+class meta_operators_v(db.Model):
+    __tablename__ = 'meta_operators_v'
+
+   
+    state           = db.Column(db.String(64))
+    statecode       = db.Column(db.String(64))
+    type            = db.Column(db.String(64))  
+    lat             = db.Column(db.Float)
+    lon             = db.Column(db.Float) 
+    completeness    = db.Column(db.Integer) 
+    loc_amenity     = db.Column(db.String(64))
+    access_hours    = db.Column(db.String(64))
+    addr_postcode   = db.Column(db.String(64))
+    loc_name        = db.Column(db.String(64))
+    state           = db.Column(db.String(64))
+    meta_operator   = db.Column(db.String(64))  
+    meta_speciality = db.Column(db.String(64))  
+    meta_emergency  = db.Column(db.String(64))  
+    contact_url     = db.Column(db.String(64))  
+    meta_operator_type  = db.Column(db.String(64))  
+    contact_phone   = db.Column(db.String(64))  
+    meta_wheelchair = db.Column(db.String(64))  
+    osm_id          = db.Column(db.Integer, primary_key=True)
+
+    def __repr__(self):
+        return '<meta_operators_v %r>' % (self.name)
