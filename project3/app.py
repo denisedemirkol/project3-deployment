@@ -116,7 +116,7 @@ from .models import statepostcodes
 def states():
     results = db.session.query(statepostcodes.state, statepostcodes.abbreviation, statepostcodes.postcode_low).all()
     print(results)
-    return results
+    return jsonify(results)  
     
 
 if __name__ == '__main__':
