@@ -123,13 +123,20 @@ def states():
     
     for i in range(len(results)):
         
-        l_list.append(results[i])
+        
         l_state        = results[i][0]   
         l_abbreviation = results[i][1]
         l_postcode_low = results[i][2]
 
+        l_dict = {
+                "state": results[i][0],
+                "statecode": results[i][1],
+                "postcode": l_postcode_low
+            }
 
-    print(l_state)
+        l_list.append(l_dict)
+
+    print(l_dict)
     return jsonify(results)  
     
 
