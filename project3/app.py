@@ -124,9 +124,9 @@ def states():
     for i in range(len(results)):
         
         l_list.append(results[i])
-        l_state        = results[i][1]   
-        l_abbreviation = results[i][2]
-        l_postcode_low = results[i][3]
+        l_state        = results[i][0]   
+        l_abbreviation = results[i][1]
+        l_postcode_low = results[i][2]
 
 
     print(l_state)
