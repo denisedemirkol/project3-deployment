@@ -29,9 +29,6 @@ db = SQLAlchemy(app)
 
 # flask setup
 
-
-app = Flask(__name__)
-
 # flask routes
 @app.route("/")
 def homepage():
