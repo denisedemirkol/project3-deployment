@@ -120,6 +120,10 @@ def states():
     for i in range(len(results)):
         print(results[i])
 
+        for x in range(len(results[i])):
+            print(results[i][x])
+
+
     return jsonify(results)  
     
 
