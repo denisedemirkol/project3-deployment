@@ -8,7 +8,7 @@ import pandas as pd
 
 from flask import Flask, jsonify
 from flask import Response
-from .models import statepostcodes
+
 
 #################################################
 # Flask Setup
@@ -46,6 +46,7 @@ def homepage():
     )
 
 
+from .models import statepostcodes
 
 # @app.route("/api/healthcaretypes")
 # def healthcaretypes():
