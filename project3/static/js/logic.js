@@ -74,8 +74,8 @@ function createMap(sites) {
 
 
 
-
-d3.json("http://localhost:5000/api/v0/healthsites").then(
+const url = "/api/v0/healthsites";
+d3.json(url).then(
  data => {
 
   var sites = data;
