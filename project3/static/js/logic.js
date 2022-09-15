@@ -87,9 +87,6 @@ d3.json(url).then(
 
   for (var index = 0; index < sites.length; index++) {
 
-      console.log(sites[index]["lat"])
-
-      console.log(sites[index][0]);
     
       vLat = sites[index]["lat"];
       vLon = sites[index]["lon"];
