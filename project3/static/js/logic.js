@@ -81,11 +81,13 @@ d3.json(url).then(
   var sites = data;
   var siteMarkers = [];
 
-
   console.log(sites.length);
+  console.log(sites)
+
 
   for (var index = 0; index < sites.length; index++) {
 
+      console.log(sites[index])
 
       console.log(sites[index][0]);
     
