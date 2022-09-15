@@ -6,8 +6,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 import pandas as pd
 
-from flask import Flask, jsonify
-from flask import Response
+from flask import Flask, jsonify,render_template
 
 
 #################################################
@@ -30,17 +29,21 @@ db = SQLAlchemy(app)
 # flask setup
 
 # flask routes
-@app.route("/")
-def homepage():
-    return (
-        f"Welcome to the Australia Health Sites APIs <br/>"
-        f"Available Routes:<br/>"
-        f"/api/healthcaretypes<br/>"
-        f"/api/v0/healthsites<br/>"
-        f"/api/v0/metaoperators<br/>"
-        f"/api/v0/statestats<br/>"
+# @app.route("/")
+# def homepage():
+#     return (
+#         f"Welcome to the Australia Health Sites APIs <br/>"
+#         f"Available Routes:<br/>"
+#         f"/api/healthcaretypes<br/>"
+#         f"/api/v0/healthsites<br/>"
+#         f"/api/v0/metaoperators<br/>"
+#         f"/api/v0/statestats<br/>"
 
-    )
+#     )
+
+@app.route("/")
+def home():
+    return render_template("index.html")   
 
 
 from .models import (statepostcodes, 
