@@ -82,7 +82,7 @@ d3.json(url).then(
   var siteMarkers = [];
 
   console.log(sites.length);
-
+  console.log("JS HERE");
 
 
   for (var index = 0; index < sites.length; index++) {
