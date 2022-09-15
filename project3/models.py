@@ -29,6 +29,26 @@ class statestats_v(db.Model):
         return '<statestats_v %r>' % (self.name)
 
 
+class healthsites_v(db.Model):
+    __tablename__ = 'healthsites_v'
+
+   
+    lat             = db.Column(db.Float)
+    lon             = db.Column(db.Float) 
+    completeness    = db.Column(db.Integer) 
+    loc_amenity     = db.Column(db.String(64))
+    access_hours    = db.Column(db.String(64))
+    addr_postcode   = db.Column(db.String(64))
+    meta_healthcare = db.Column(db.String(64))
+    loc_name        = db.Column(db.String(64))
+    state           = db.Column(db.String(64))
+    abbreviation    = db.Column(db.String(64))
+    osm_id          = db.Column(db.Integer, primary_key=True)
+
+    def __repr__(self):
+        return '<healthsites_v %r>' % (self.name)
+
+
 class meta_operators_v(db.Model):
     __tablename__ = 'meta_operators_v'
 
@@ -54,4 +74,4 @@ class meta_operators_v(db.Model):
     osm_id          = db.Column(db.Integer, primary_key=True)
 
     def __repr__(self):
-        return '<meta_operators_v %r>' % (self.name)
+        return '<meta_operators_v %r>' % (self.name)        

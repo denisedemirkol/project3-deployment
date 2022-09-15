@@ -43,49 +43,44 @@ def homepage():
     )
 
 
-from .models import statepostcodes, statestats_v, meta_operators_v as mv
+from .models import (statepostcodes, 
+                     statestats_v, 
+                     meta_operators_v as mv,
+                     healthsites_v    as hv)
 
 
 
 
-# @app.route("/api/v0/healthsites")
-# def healthsites():
+@app.route("/api/v0/healthsites")
+def healthsites():
 
-#     sqltext1 = "Select ah.lat,ah.lon,ah.osm_id, ah.completeness,ah.loc_amenity, ah.access_hours, ah.addr_postcode, ah.meta_healthcare, ah.loc_name ,"
-#     sqltext2 = "spc.state, spc.abbreviation From australia_healthsites ah Left Join StatePostCodes   spc on to_number(addr_postcode,'9999') Between spc.postcode_low and spc.postcode_high "
-#     sqltext3 = "Where lat is not null and lon is not null and substring(COALESCE(addr_postcode,'0'),1,1) IN ('0','1','2','3','4','5','6','7','8','9')"
+    l_list = []
+    l_dict = {}  
 
-#     sqltext = sqltext1 + sqltext2 +sqltext3
-#     print(sqltext)
-
-#     df = pd.read_sql(sqltext, conn)  
-    
-#     data = []
-
-#     for index, row in df.iterrows():
-    
-
-#         data.append([{
-#             "lat": row['lat'],
-#             "lon": row['lon'],
-#             "osm_id": row['osm_id'],
-#             "completeness": row['completeness'],
-#             "loc_amenity":row['loc_amenity'],
-#             "access_hours":row['access_hours'],
-#             "addr_postcode":row['addr_postcode'],
-#             "meta_healthcare":row['meta_healthcare'],
-#             "loc_name":row['loc_name'],
-#             "state_name": row['state'], 
-#             "state_code": row['abbreviation'],                      
-#         }])
+    results = db.session.query(hv.lat, hv.lon, hv.osm_id, hv.completeness, hv.loc_amenity, hv.access_hours, 
+                               hv.addr_postcode, hv.loc_name, hv.state, hv.meta_healthcare, hv.abbreviation).all()
 
 
+    for i in range(len(results)):
+             
+        l_dict = {
+                "lat"               : results[i][0],
+                "lon"               : results[i][1],
+                "osm_id"            : results[i][2],
+                "completeness"      : results[i][3],
+                "loc_amenity"       : results[i][4],
+                "access_hours"      : results[i][5],
+                "addr_postcode"     : results[i][6],
+                "loc_name"          : results[i][7],
+                "state"             : results[i][8],
+                "meta_healthcare"   : results[i][9],
+                "abbreviation"      : results[i][10]
+            }
 
+        l_list.append(l_dict)
 
+    return jsonify(l_list)  
 
-#     return jsonify(data)
-
-#     #return df.to_json()
 
 
 @app.route("/api/v0/metaoperators")
