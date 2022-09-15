@@ -153,7 +153,6 @@ d3.json(url).then(
 
   }  
  
-  console.log(data);
   createMap(L.layerGroup(siteMarkers));
   
 
