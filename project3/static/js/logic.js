@@ -230,8 +230,8 @@ d3.json(url).then(
   anychart.onDocumentReady(function () {
   
          
-  
-          d3.json("http://127.0.0.1:5000/api/v0/statestats").then(
+          const anycharturl = "/api/v0/statestats";
+          d3.json(anycharturl).then(
               data => {
   
                   const metadata = data;
