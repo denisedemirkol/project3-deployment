@@ -241,26 +241,7 @@ d3.json(url).then(
                     get_arrays(value['statecode'],value['rowcount'],value['type'] );
   
                   });
-  
-    
-    
-         console.log(v_header);   
-  
-      
-  
-  
-  
-   
-         console.log( "v_nsw",v_nsw  );   
-         console.log( "v_nt",v_nt );   
-         console.log( "v_qld",v_qld );   
-         console.log( "v_sa",v_sa  );   
-         console.log( "v_tas",v_tas );   
-         console.log( "v_vic",v_vic );   
-         console.log( "v_wa",v_wa );   
-  
-  
-        console.log("TEST")      
+
          
   
          var xtitle = 'Australia Healthsites Distirbution' 
