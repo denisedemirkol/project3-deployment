@@ -265,20 +265,6 @@ d3.json(url).then(
   
          var xtitle = 'Australia Healthsites Distirbution' 
   
-          // // create data
-          // var data = {
-          //   title: xtitle,
-          //   header: ['Name', 'Clinic', 'Dentist', 'Doctors', 'Hospital','Pharmacy'],
-          //   rows: [
-          //     ['Huawei', 59.1,56.6,66.8,56.2,10],           
-          //     ['ACT',v_act['clinic'],v_act['dentist'],v_act['doctors'],v_act['hospital'],v_act['pharmacy']],
-          //     ['Vivo', 23.9,27,31.3,31.5,10],
-          //     ['Apple', 42,36.5,44.8,72.3,10],
-          //     ['Samsung', 72,76.3,78.2,70.4,10],
-          //     ['Xiaomi', 27.8,32.3,31.7,32.9,10],
-          //     ['Oppo', 25.7,30.6,32.3,31.4,10],
-          //     ['Others', 90.5,97.7,94.9,106.4,10],
-          //   ]
   
         // create data
           var data = {
