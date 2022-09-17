@@ -427,7 +427,7 @@ function build_graphs(sampleid)
                                 path: path,
                                 fillcolor: '850000',
                                 line: {color: '850000'}}],
-                       title    : '<b>Completeness</b> <br> Completeness of the dataset',
+                       title    : '<b>Completeness</b> <br> “Completeness” refers to how comprehensive the information whether all of the data we need is available and accurate',
                        height   : 500,
                        width    : 500,
                        xaxis    : {zeroline:false, showticklabels:false, showgrid: false, range: [-1, 1]},
