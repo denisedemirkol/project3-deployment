@@ -17,7 +17,6 @@ var layers = {
 
 function createMap(sites) {
 
-  console.log("Create Map");
 
   // Define Variables for Tile Layers
   var satelliteMap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
@@ -66,7 +65,6 @@ function createMap(sites) {
       ]
     });
 
-    console.log("map definition is complete");
 
 
     // Create a layer control, pass in the baseMaps and overlayMaps. Add the layer control to the map
@@ -86,8 +84,6 @@ d3.json(url).then(
   var sites = data;
   var siteMarkers = [];
 
-  console.log(sites.length);
-  console.log("JS HERE");
 
 
   for (var index = 0; index < sites.length; index++) {
@@ -454,7 +450,7 @@ function build_graphs(sampleid)
 
 function optionChanged(sampleid)
 {
-    console.log("Selected individiual is " + sampleid);
+    
     populate_demographic_table(sampleid)
     build_graphs(sampleid)
 
