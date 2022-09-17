@@ -76,6 +76,42 @@ function createMap(sites) {
 }
 
 
+// Initialize an object containing icons for each layer group
+var icons = {
+  PHARMACY: L.ExtraMarkers.icon({
+    //icon: "ion-settings",
+    iconColor: "white",
+    markerColor: "yellow",
+    shape: "circle"
+  }),
+  DOCTOR: L.ExtraMarkers.icon({
+    //icon: "ion-android-bicycle",
+    iconColor: "white",
+    markerColor: "red",
+    shape: "circle"
+  }),
+  CLINIC: L.ExtraMarkers.icon({
+    //icon: "ion-minus-circled",
+    iconColor: "white",
+    markerColor: "blue-dark",
+    shape: "circle"
+  }),
+  DENTIST: L.ExtraMarkers.icon({
+    //icon: "ion-android-bicycle",
+    iconColor: "white",
+    markerColor: "orange",
+    shape: "circle"
+  }),
+  HOSPITAL: L.ExtraMarkers.icon({
+    //icon: "ion-android-bicycle",
+    iconColor: "white",
+    markerColor: "green",
+    shape: "circle"
+  })
+};
+
+
+
 
 const url = "/api/v0/healthsites";
 d3.json(url).then(
