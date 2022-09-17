@@ -338,7 +338,9 @@ function populate_demographic_table(sampleid)
               else if (key == 'contact_phone')               
                  label = "Contact Phone";                   
               else if (key == 'meta_wheelchair')               
-                 label = "Wheelchair Access";                                    
+                 label = "Wheelchair Access";      
+              else if (key == 'address')               
+                 label = "Address";                                                       
               else
                  label = "";  
 

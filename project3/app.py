@@ -28,18 +28,6 @@ db = SQLAlchemy(app)
 
 # flask setup
 
-# flask routes
-# @app.route("/")
-# def homepage():
-#     return (
-#         f"Welcome to the Australia Health Sites APIs <br/>"
-#         f"Available Routes:<br/>"
-#         f"/api/healthcaretypes<br/>"
-#         f"/api/v0/healthsites<br/>"
-#         f"/api/v0/metaoperators<br/>"
-#         f"/api/v0/statestats<br/>"
-
-#     )
 
 @app.route("/")
 def home():
@@ -95,7 +83,7 @@ def metaoperators():
     results = db.session.query(mv.lat, mv.lon, mv.osm_id, mv.completeness, mv.loc_amenity, mv.access_hours, 
                                mv.addr_postcode, mv.loc_name, mv.state, mv.meta_operator, mv.meta_speciality, 
                                mv.meta_emergency, mv.contact_url, mv.meta_operator_type, mv.contact_phone, 
-                               mv.meta_wheelchair).all()
+                               mv.meta_wheelchair, mv.address).all()
 
 
     for i in range(len(results)):
@@ -117,6 +105,7 @@ def metaoperators():
                 "meta_operator_type"  : results[i][13],
                 "contact_phone"     : results[i][14],
                 "meta_wheelchair"   : results[i][15],
+                "address"           : results[i][16]
             }
 
         l_list.append(l_dict)

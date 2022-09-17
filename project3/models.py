@@ -71,6 +71,7 @@ class meta_operators_v(db.Model):
     meta_operator_type  = db.Column(db.String(64))  
     contact_phone   = db.Column(db.String(64))  
     meta_wheelchair = db.Column(db.String(64))  
+    address         = db.Column(db.String(64))    
     osm_id          = db.Column(db.Integer, primary_key=True)
 
     def __repr__(self):
