@@ -270,8 +270,8 @@ d3.json(url).then(
           // set the chart data
           chart.data(data);
 
-          chart.height('100%');
-          chart.width('100%');
+          chart.height('1000px');
+          chart.width('1000px');
   
           // enable the chart legend
           chart.legend(true);
