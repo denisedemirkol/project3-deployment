@@ -58,7 +58,7 @@ function createMap(sites) {
 
       // Create the map object with options
     var map = L.map("map", {
-      center: [-27, 153],
+      center: [-23, 133],
       zoom: 4,
       layers: [
         lightmap, 
@@ -427,7 +427,7 @@ function build_graphs(sampleid)
                                 path: path,
                                 fillcolor: '850000',
                                 line: {color: '850000'}}],
-                       title    : '<b>Completeness</b> <br> how comprehensive the information whether <br> all of the data we need is available and accurate',
+                       title    : '<b>Completeness</b> <br> how comprehensive the information whether <br> all of the data we need is available and accurate <br> ',
                        height   : 500,
                        width    : 500,
                        xaxis    : {zeroline:false, showticklabels:false, showgrid: false, range: [-1, 1]},
