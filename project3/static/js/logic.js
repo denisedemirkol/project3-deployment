@@ -79,31 +79,31 @@ function createMap(sites) {
 // Initialize an object containing icons for each layer group
 var icons = {
   PHARMACY: L.ExtraMarkers.icon({
-    //icon: "ion-settings",
+    icon: "ion-settings",
     iconColor: "white",
     markerColor: "yellow",
     shape: "circle"
   }),
   DOCTOR: L.ExtraMarkers.icon({
-    //icon: "ion-android-bicycle",
+    icon: "ion-android-bicycle",
     iconColor: "white",
     markerColor: "red",
     shape: "circle"
   }),
   CLINIC: L.ExtraMarkers.icon({
-    //icon: "ion-minus-circled",
+    icon: "ion-minus-circled",
     iconColor: "white",
     markerColor: "blue-dark",
     shape: "circle"
   }),
   DENTIST: L.ExtraMarkers.icon({
-    //icon: "ion-android-bicycle",
+    icon: "ion-android-bicycle",
     iconColor: "white",
     markerColor: "orange",
     shape: "circle"
   }),
   HOSPITAL: L.ExtraMarkers.icon({
-    //icon: "ion-android-bicycle",
+    icon: "ion-android-bicycle",
     iconColor: "white",
     markerColor: "green",
     shape: "circle"
@@ -138,7 +138,9 @@ d3.json(url).then(
 
       if (vAmenity === 'pharmacy'){
 
-        var pharmacyMarker = L.circleMarker([vLon,vLat])
+        var pharmacyMarker = L.circleMarker([vLon,vLat], {
+          icon: icons['PHARMACY']
+        })
         .bindPopup("<h3>Name: " + vName + "</h3><h3>Amenity: "+vAmenity+"<h3>");
 
         pharmacyMarker.addTo(layers['PHARMACY']);
