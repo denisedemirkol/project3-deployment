@@ -362,8 +362,6 @@ function populate_demographic_table(sampleid)
 function build_graphs(sampleid)
 {
 
-    console.log("Building graphs for %s.",  sampleid) 
-    console.log("Loading data...") 
 
     let gaugeurl = "/api/v0/metaoperators";
     let data = d3.json(gaugeurl).then(data => {    
@@ -379,8 +377,6 @@ function build_graphs(sampleid)
 
     function build_gauge_graph(sampleid){
 
-        console.log("Building gauge bar for %s.",  sampleid) ; 
-        console.log("Completeness is %s.",  completeness) ; 
 
 
 
