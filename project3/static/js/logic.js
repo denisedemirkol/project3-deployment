@@ -78,32 +78,27 @@ function createMap(sites) {
 
 // Initialize an object containing icons for each layer group
 var icons = {
-  PHARMACY: L.ExtraMarkers.icon({
-    icon: "ion-settings",
+  PHARMACY: L.ExtraMarkers.icon({    
     iconColor: "white",
     markerColor: "yellow",
     shape: "circle"
   }),
   DOCTOR: L.ExtraMarkers.icon({
-    icon: "ion-android-bicycle",
     iconColor: "white",
     markerColor: "red",
     shape: "circle"
   }),
   CLINIC: L.ExtraMarkers.icon({
-    icon: "ion-minus-circled",
     iconColor: "white",
     markerColor: "blue-dark",
     shape: "circle"
   }),
   DENTIST: L.ExtraMarkers.icon({
-    icon: "ion-android-bicycle",
     iconColor: "white",
     markerColor: "orange",
     shape: "circle"
   }),
   HOSPITAL: L.ExtraMarkers.icon({
-    icon: "ion-android-bicycle",
     iconColor: "white",
     markerColor: "green",
     shape: "circle"
@@ -138,51 +133,71 @@ d3.json(url).then(
 
       if (vAmenity === 'pharmacy'){
 
-        var pharmacyMarker = L.circleMarker([vLon,vLat], {
+        
+        var pharmacyMarker = L.marker([vLon,vLat], {
           icon: icons['PHARMACY']
-        })
-        .bindPopup("<h3>Name: " + vName + "</h3><h3>Amenity: "+vAmenity+"<h3>");
-
+        });
+ 
         pharmacyMarker.addTo(layers['PHARMACY']);
+
+        pharmacyMarker.bindPopup("<h3>Name: " + vName + "</h3><h3>Amenity: "+vAmenity+"<h3>");
+        
+        
 
       } 
       else if (vAmenity === 'doctors'){
 
-        var doctorMarker = L.circleMarker([vLon,vLat])
-        .bindPopup("<h3>Name: " + vName + "</h3><h3>Amenity: "+vAmenity+"<h3>");
 
+        var doctorMarker = L.marker([vLon,vLat], {
+          icon: icons['DOCTOR']
+        });
+ 
         doctorMarker.addTo(layers['DOCTOR']);
+
+        doctorMarker.bindPopup("<h3>Name: " + vName + "</h3><h3>Amenity: "+vAmenity+"<h3>");
 
       } 
 
       else if (vAmenity === 'clinic'){
 
-        var clinicMarker = L.circleMarker([vLon,vLat])
-        .bindPopup("<h3>Name: " + vName + "</h3><h3>Amenity: "+vAmenity+"<h3>");
 
+        var clinicMarker = L.marker([vLon,vLat], {
+          icon: icons['CLINIC']
+        });
+ 
         clinicMarker.addTo(layers['CLINIC']);
 
+        clinicMarker.bindPopup("<h3>Name: " + vName + "</h3><h3>Amenity: "+vAmenity+"<h3>");
+
+        
       } 
 
       
       else if (vAmenity === 'dentist'){
 
-    
-        var socialMarker = L.circleMarker([vLon,vLat])
-        .bindPopup("<h3>Name: " + vName + "</h3><h3>Amenity: "+vAmenity+"<h3>");
 
-        socialMarker.addTo(layers['DENTIST']);
+        var dentistmarker = L.marker([vLon,vLat], {
+          icon: icons['DENTIST']
+        });
+ 
+        dentistmarker.addTo(layers['DENTIST']);
+
+        dentistmarker.bindPopup("<h3>Name: " + vName + "</h3><h3>Amenity: "+vAmenity+"<h3>");
+
 
       } 
 
             
       else if (vAmenity === 'hospital'){
 
-    
-        var socialMarker = L.circleMarker([vLon,vLat])
-        .bindPopup("<h3>Name: " + vName + "</h3><h3>Amenity: "+vAmenity+"<h3>");
 
-        socialMarker.addTo(layers['HOSPITAL']);
+        var hospitalmarker = L.marker([vLon,vLat], {
+          icon: icons['HOSPITAL']
+        });
+ 
+        hospitalmarker.addTo(layers['HOSPITAL']);
+
+        hospitalmarker.bindPopup("<h3>Name: " + vName + "</h3><h3>Amenity: "+vAmenity+"<h3>");
 
       } 
 
